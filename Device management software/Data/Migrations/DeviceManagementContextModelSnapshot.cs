@@ -22,7 +22,7 @@ namespace Device_management_software.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Device_management_software.Models.Category", b =>
+            modelBuilder.Entity("Device_management_software.Models.Entities.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -40,7 +40,6 @@ namespace Device_management_software.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("UpdatedAt")
@@ -54,7 +53,7 @@ namespace Device_management_software.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("Device_management_software.Models.Device", b =>
+            modelBuilder.Entity("Device_management_software.Models.Entities.Device", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -66,7 +65,6 @@ namespace Device_management_software.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Code")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreatedAt")
@@ -79,7 +77,6 @@ namespace Device_management_software.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Status")
@@ -98,7 +95,7 @@ namespace Device_management_software.Migrations
                     b.ToTable("Devices");
                 });
 
-            modelBuilder.Entity("Device_management_software.Models.User", b =>
+            modelBuilder.Entity("Device_management_software.Models.Entities.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -113,18 +110,15 @@ namespace Device_management_software.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Phone")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Role")
@@ -141,9 +135,9 @@ namespace Device_management_software.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("Device_management_software.Models.Device", b =>
+            modelBuilder.Entity("Device_management_software.Models.Entities.Device", b =>
                 {
-                    b.HasOne("Device_management_software.Models.Category", "Category")
+                    b.HasOne("Device_management_software.Models.Entities.Category", "Category")
                         .WithMany("Devices")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -152,7 +146,7 @@ namespace Device_management_software.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("Device_management_software.Models.Category", b =>
+            modelBuilder.Entity("Device_management_software.Models.Entities.Category", b =>
                 {
                     b.Navigation("Devices");
                 });

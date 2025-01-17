@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Device_management_software.Models
+namespace Device_management_software.Models.Commons
 {
     public abstract class BaseEntity
     {

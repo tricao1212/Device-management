@@ -1,16 +1,14 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Device_management_software.Models.Commons;
+using Device_management_software.Models.Enums;
 
-namespace Device_management_software.Models
+namespace Device_management_software.Models.Entities
 {
     public class User : BaseEntity
     {
-        [Required]
         public string Name { get; set; }
-        [Required]
         public string Email { get; set; }
-        [Required]
         public string Phone { get; set; }
-        [Required]
         public Role Role { get; set; }
     }
 }

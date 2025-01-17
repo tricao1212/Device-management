@@ -1,4 +1,4 @@
-﻿namespace Device_management_software.Models
+﻿namespace Device_management_software.Models.Enums
 {
     public enum Role
     {

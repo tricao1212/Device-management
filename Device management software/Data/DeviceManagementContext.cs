@@ -1,4 +1,5 @@
-﻿using Device_management_software.Models;
+﻿using Device_management_software.Models.Commons;
+using Device_management_software.Models.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
